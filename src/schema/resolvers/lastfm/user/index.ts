@@ -81,6 +81,31 @@ const UserResolvers: IResolvers = {
     rank: obj => {
       return obj["@attr"]["rank"];
     }
+  },
+  Track: {
+    nowplaying: obj => {
+      console.log(obj);
+      const nowplaying = obj["@attr"] && obj["@attr"]["nowplaying"] ? true : false ;
+      return nowplaying;
+    }
+  },
+  Album: {
+    name: obj => {
+      if (obj["name"]) {
+        return obj["name"];
+      } else {
+        return obj["#text"];
+      }
+    },
+  },
+  Artist: {
+    name: obj => {
+      if (obj["name"]) {
+        return obj["name"];
+      } else {
+        return obj["#text"];
+      }
+    },
   }
 };
 

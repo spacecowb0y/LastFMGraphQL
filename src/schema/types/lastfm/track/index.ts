@@ -40,6 +40,7 @@ const TrackDefs = gql`
     streamable: Boolean
     rank: String
     playcount: Int
+    nowplaying: Boolean
   }
 `;
 
